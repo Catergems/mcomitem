@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " A ",
+    " X "
+  ],
+  "key": {
+    "A": "minecraft:amethyst_shard",
+    "X": "minecraft:stick"
+  },
+  "result": {
+    "id": "mcomitem:amethyst_sword",
+    "count": 1
+  }
+}

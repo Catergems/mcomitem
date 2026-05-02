@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " D ",
+    " S ",
+    " X "
+  ],
+  "key": {
+    "D": "minecraft:diamond",
+    "S": "minecraft:nether_star",
+    "X": "minecraft:stick"
+  },
+  "result": {
+    "id": "mcomitem:star_sword",
+    "count": 1
+  }
+}

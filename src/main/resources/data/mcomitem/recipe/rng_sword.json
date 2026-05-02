@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " D ",
+    " D ",
+    " X "
+  ],
+  "key": {
+    "D": "minecraft:diamond",
+    "X": "minecraft:stick"
+  },
+  "result": {
+    "id": "mcomitem:rng_sword",
+    "count": 1
+  }
+}
