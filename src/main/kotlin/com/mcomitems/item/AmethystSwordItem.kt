@@ -4,6 +4,7 @@ import net.minecraft.entity.EquipmentSlot
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
+import net.minecraft.entity.passive.*
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -16,6 +17,27 @@ class AmethystSwordItem(settings: Settings) : Item(settings) {
 
     companion object {
         const val HIGHLIGHT_RADIUS = 18.0
+
+        fun isExcluded(entity: LivingEntity, attacker: PlayerEntity): Boolean {
+            // Angry wolf targeting the attacker — allow damage
+            if (entity is WolfEntity && entity.isAttacking && entity.target == attacker) return false
+
+            return entity is PigEntity         || entity is WolfEntity      ||
+                    entity is HorseEntity       || entity is DonkeyEntity    ||
+                    entity is MuleEntity        || entity is CatEntity        ||
+                    entity is OcelotEntity      || entity is ParrotEntity     ||
+                    entity is RabbitEntity      || entity is SheepEntity      ||
+                    entity is CowEntity         || entity is ChickenEntity    ||
+                    entity is MooshroomEntity   || entity is AxolotlEntity    ||
+                    entity is BeeEntity         || entity is FoxEntity        ||
+                    entity is PandaEntity       || entity is PolarBearEntity  ||
+                    entity is TurtleEntity      || entity is GoatEntity       ||
+                    entity is FrogEntity        || entity is SnifferEntity    ||
+                    entity is StriderEntity     || entity is LlamaEntity     ||
+                    entity is PlayerEntity     ||
+                    entity is IronGolemEntity  || entity is VillagerEntity
+        }
+
         fun vibrationDamage(distance: Double): Float = when {
             distance <= 3.0  -> 4f
             distance <= 8.0  -> 3f
@@ -36,7 +58,13 @@ class AmethystSwordItem(settings: Settings) : Item(settings) {
 
             for (mob in nearbyMobs) {
                 val distance = attacker.distanceTo(mob).toDouble()
-                if (distance <= HIGHLIGHT_RADIUS) mob.addStatusEffect(StatusEffectInstance(StatusEffects.GLOWING, 100, 0))
+
+                if (distance <= HIGHLIGHT_RADIUS) {
+                    mob.addStatusEffect(StatusEffectInstance(StatusEffects.GLOWING, 100, 0))
+                }
+
+                if (isExcluded(mob, attacker)) continue
+
                 val damage = vibrationDamage(distance)
                 if (damage > 0f) mob.damage(world, attacker.damageSources.magic(), damage)
             }
