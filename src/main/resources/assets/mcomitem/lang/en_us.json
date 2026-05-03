@@ -1,5 +1,11 @@
 {
   "item.mcomitem.star_sword": "Star Sword",
   "item.mcomitem.rng_sword": "RNG Sword",
-  "item.mcomitem.amethyst_sword": "Amethyst Sword"
+  "item.mcomitem.amethyst_sword": "Amethyst Sword",
+  "item.mcomitem.bronze_sword": "Bronze Sword",
+  "item.mcomitem.raw_tin": "Raw Tin",
+  "item.mcomitem.tin_ingot": "Tin Ingot",
+  "item.mcomitem.bronze_ingot": "Bronze Ingot",
+  "block.mcomitem.tin_ore": "Tin Ore",
+  "block.mcomitem.deepslate_tin_ore": "Deepslate Tin Ore"
 }

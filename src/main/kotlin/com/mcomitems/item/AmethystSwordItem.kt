@@ -23,19 +23,19 @@ class AmethystSwordItem(settings: Settings) : Item(settings) {
             if (entity is WolfEntity && entity.isAttacking && entity.target == attacker) return false
 
             return entity is PigEntity         || entity is WolfEntity      ||
-                    entity is HorseEntity       || entity is DonkeyEntity    ||
-                    entity is MuleEntity        || entity is CatEntity        ||
-                    entity is OcelotEntity      || entity is ParrotEntity     ||
-                    entity is RabbitEntity      || entity is SheepEntity      ||
-                    entity is CowEntity         || entity is ChickenEntity    ||
-                    entity is MooshroomEntity   || entity is AxolotlEntity    ||
-                    entity is BeeEntity         || entity is FoxEntity        ||
-                    entity is PandaEntity       || entity is PolarBearEntity  ||
-                    entity is TurtleEntity      || entity is GoatEntity       ||
-                    entity is FrogEntity        || entity is SnifferEntity    ||
-                    entity is StriderEntity     || entity is LlamaEntity     ||
-                    entity is PlayerEntity     ||
-                    entity is IronGolemEntity  || entity is VillagerEntity
+                   entity is HorseEntity       || entity is DonkeyEntity    ||
+                   entity is MuleEntity        || entity is CatEntity        ||
+                   entity is OcelotEntity      || entity is ParrotEntity     ||
+                   entity is RabbitEntity      || entity is SheepEntity      ||
+                   entity is CowEntity         || entity is ChickenEntity    ||
+                   entity is MooshroomEntity   || entity is AxolotlEntity    ||
+                   entity is BeeEntity         || entity is FoxEntity        ||
+                   entity is PandaEntity       || entity is PolarBearEntity  ||
+                   entity is TurtleEntity      || entity is GoatEntity       ||
+                   entity is FrogEntity        || entity is SnifferEntity    ||
+                   entity is StriderEntity     || entity is LlamaEntity     ||
+                   entity is PlayerEntity     ||
+                   entity is IronGolemEntity  || entity is VillagerEntity
         }
 
         fun vibrationDamage(distance: Double): Float = when {
