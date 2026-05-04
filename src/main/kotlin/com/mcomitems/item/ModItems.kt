@@ -13,7 +13,6 @@ import net.minecraft.util.Identifier
 
 object ModItems {
 
-    // Swords
     val STAR_SWORD: Item = register("star_sword") { key ->
         StarSwordItem(Item.Settings().sword(ToolMaterial.DIAMOND, 2f, -2.4f).maxDamage(500).registryKey(key))
     }
@@ -26,8 +25,17 @@ object ModItems {
     val BRONZE_SWORD: Item = register("bronze_sword") { key ->
         BronzeSwordItem(Item.Settings().sword(ToolMaterial.IRON, 4f, -2.4f).maxDamage(600).registryKey(key))
     }
-
-    // Raw materials
+    val REPAIR_KIT_T1: Item = register("repair_kit_t1") { key ->
+        RepairKitItem(Item.Settings().maxDamage(5).maxCount(1).registryKey(key), repairPercent = 0.05f)
+    }
+    val REPAIR_KIT_T2: Item = register("repair_kit_t2") { key ->
+        RepairKitItem(Item.Settings().maxDamage(15).maxCount(1).registryKey(key), repairPercent = 0.175f)
+    }
+    val SMELTING_PICKAXE: Item = register("smelting_pickaxe") { key ->
+        SmeltingPickaxeItem(
+            Item.Settings().pickaxe(ToolMaterial.IRON, 1f, -2.8f).maxDamage(400).registryKey(key)
+        )
+    }
     val RAW_TIN: Item = register("raw_tin") { key ->
         Item(Item.Settings().registryKey(key))
     }
@@ -49,6 +57,11 @@ object ModItems {
             group.add(RNG_SWORD)
             group.add(AMETHYST_SWORD)
             group.add(BRONZE_SWORD)
+            group.add(REPAIR_KIT_T1)
+            group.add(REPAIR_KIT_T2)
+        }
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register { group ->
+            group.add(SMELTING_PICKAXE)
         }
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register { group ->
             group.add(RAW_TIN)

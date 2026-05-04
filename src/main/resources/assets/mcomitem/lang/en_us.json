@@ -7,5 +7,8 @@
   "item.mcomitem.tin_ingot": "Tin Ingot",
   "item.mcomitem.bronze_ingot": "Bronze Ingot",
   "block.mcomitem.tin_ore": "Tin Ore",
-  "block.mcomitem.deepslate_tin_ore": "Deepslate Tin Ore"
+  "block.mcomitem.deepslate_tin_ore": "Deepslate Tin Ore",
+  "item.mcomitem.repair_kit_t1": "Repair Kit [1]",
+  "item.mcomitem.repair_kit_t2": "Repair Kit [2]",
+  "item.mcomitem.smelting_pickaxe": "Smelting pickaxe"
 }

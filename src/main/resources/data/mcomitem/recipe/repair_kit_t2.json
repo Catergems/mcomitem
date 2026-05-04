@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IGI",
+    "IMI",
+    "TTT"
+  ],
+  "key": {
+    "I": "minecraft:iron_ingot",
+    "G": "minecraft:gold_ingot",
+    "M": "minecraft:nether_star",
+    "T": "mcomitem:tin_ingot"
+  },
+  "result": {
+    "id": "mcomitem:repair_kit_t2",
+    "count": 1
+  }
+}

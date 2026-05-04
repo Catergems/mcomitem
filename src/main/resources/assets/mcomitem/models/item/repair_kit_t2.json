@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mcomitem:item/repair_kit_t2"
+  }
+}
